@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 4/27/18
+ * @since 5/4/18
  */
 @Service
 public class DictionaryServiceTypeImpl extends BaseService<DictionaryType> implements DictionaryTypeService {

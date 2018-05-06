@@ -21,7 +21,7 @@ import javax.validation.Valid;
 
 /**
  * @author kangyonggan
- * @date 2017/1/8
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("dashboard/user/info")
@@ -36,8 +36,8 @@ public class DashboardUserInfoController extends BaseController {
     /**
      * 基本信息
      *
-     * @param model
-     * @return
+     * @param model 数据
+     * @return 返回基本信息界面
      */
     @RequestMapping(method = RequestMethod.GET)
     @RequiresPermissions("USER_INFO")
@@ -51,10 +51,10 @@ public class DashboardUserInfoController extends BaseController {
     /**
      * 基本信息
      *
-     * @param user
-     * @param result
-     * @return
-     * @throws FileUploadException
+     * @param user   用户
+     * @param result 绑定结果
+     * @return 响应
+     * @throws FileUploadException 文件上传异常
      */
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody

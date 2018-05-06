@@ -20,7 +20,7 @@ import java.util.Random;
  * 验证码生成
  *
  * @author kangyonggan
- * @date 16/6/23
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("/")
@@ -47,6 +47,13 @@ public class CaptchaController {
      */
     private static final int COUNT_LINE = 30;
 
+    /**
+     * 获取验证码
+     *
+     * @param req  请求
+     * @param resp 响应
+     * @throws IOException 可能抛出异常
+     */
     @RequestMapping(value = "captcha", method = RequestMethod.GET)
     public void getCode(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         // 图像

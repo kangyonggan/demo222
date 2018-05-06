@@ -22,7 +22,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2017/1/9
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("dashboard/system/role")
@@ -37,7 +37,7 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 角色管理
      *
-     * @return
+     * @return 返回角色管理界面
      */
     @RequestMapping(method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_ROLE")
@@ -48,7 +48,7 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 角色列表查询
      *
-     * @return
+     * @return 返回查询结果集
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_ROLE")
@@ -63,8 +63,8 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 添加角色
      *
-     * @param model
-     * @return
+     * @param model 数据
+     * @return 返回添加角色模态框
      */
     @RequestMapping(value = "create", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_ROLE")
@@ -77,9 +77,9 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 保存角色
      *
-     * @param role
-     * @param result
-     * @return
+     * @param role   角色
+     * @param result 绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "save", method = RequestMethod.POST)
     @ResponseBody
@@ -99,14 +99,14 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 编辑角色
      *
-     * @param code
-     * @param model
-     * @return
+     * @param code  角色代码
+     * @param model 数据
+     * @return 返回编辑角色模态框
      */
     @RequestMapping(value = "{code:[\\w_]+}/edit", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_ROLE")
     @Token(key = "editRole")
-    public String create(@PathVariable("code") String code, Model model) {
+    public String edit(@PathVariable("code") String code, Model model) {
         model.addAttribute("role", roleService.findRoleByCode(code));
         return getPathFormModal();
     }
@@ -114,9 +114,9 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 更新角色
      *
-     * @param role
-     * @param result
-     * @return
+     * @param role   角色
+     * @param result 绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "update", method = RequestMethod.POST)
     @ResponseBody
@@ -136,9 +136,9 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 删除/恢复
      *
-     * @param code
-     * @param isDeleted
-     * @return
+     * @param code      角色代码
+     * @param isDeleted 是否删除
+     * @return 响应
      */
     @RequestMapping(value = "{code:[\\w]+}/deleted/{isDeleted:\\b0\\b|\\b1\\b}", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_ROLE")
@@ -153,8 +153,8 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 物理删除
      *
-     * @param code
-     * @return
+     * @param code 角色代码
+     * @return 响应
      */
     @RequestMapping(value = "{code:[\\w_]+}/remove", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_ROLE")
@@ -167,9 +167,9 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 修改角色的菜单
      *
-     * @param code
-     * @param model
-     * @return
+     * @param code  角色代码
+     * @param model 数据
+     * @return 返回修改角色的菜单模态框
      */
     @RequestMapping(value = "{code:[\\w_]+}/menus", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_ROLE")
@@ -192,9 +192,9 @@ public class DashboardSystemRoleController extends BaseController {
     /**
      * 更新角色菜单
      *
-     * @param code
-     * @param menus
-     * @return
+     * @param code  角色代码
+     * @param menus 菜单代码
+     * @return 响应
      */
     @RequestMapping(value = "{code:[\\w_]+}/menus", method = RequestMethod.POST)
     @RequiresPermissions("SYSTEM_ROLE")

@@ -8,15 +8,26 @@ import com.kangyonggan.extra.core.model.MonitorInfo;
 import lombok.extern.log4j.Log4j2;
 
 /**
+ * 方法监控
+ *
  * @author kangyonggan
- * @date 3/30/18
+ * @since 3/30/18
  */
 @Handle(type = Handle.Type.MONITOR)
 @Log4j2
 public class DbMonitorHandle implements MonitorHandle {
 
+    /**
+     * 监控服务
+     */
     private MonitorService monitorService;
 
+    /**
+     * 监控
+     *
+     * @param monitorInfo 监控信息
+     * @return 返回方法的返回值
+     */
     @Override
     public Object handle(MonitorInfo monitorInfo) {
         try {
@@ -27,6 +38,11 @@ public class DbMonitorHandle implements MonitorHandle {
         return monitorInfo.getReturnValue();
     }
 
+    /**
+     * 获取监控服务
+     *
+     * @return 返回监控服务
+     */
     private MonitorService getMonitorService() {
         if (monitorService == null) {
             monitorService = SpringUtils.getBean(MonitorService.class);

@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2018/4/23 0023
+ * @since 5/4/18
  */
 @Component
 public class DictTag extends AbstractFunctionTag {
@@ -21,16 +21,15 @@ public class DictTag extends AbstractFunctionTag {
     /**
      * 获取字典列表, 根据type
      *
-     * @param arguments
-     * @return
+     * @param arguments 参数
+     * @return 返回字典列表
      */
     public List<Dictionary> list(List arguments) {
         if (!hasLessTwoArgs(arguments)) {
             throw new RuntimeException("获取字典列表必须指定type！");
         }
         String type = arguments.get(1).toString();
-        List<Dictionary> dictionaries = dictionaryService.findDictionariesByType(type);
-        return dictionaries;
+        return dictionaryService.findDictionariesByType(type);
     }
 
 }

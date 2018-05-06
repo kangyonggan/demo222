@@ -8,67 +8,67 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 3/22/18
+ * @since 5/4/18
  */
 public interface UserService {
 
     /**
      * 根据用户名查找用户
      *
-     * @param username
-     * @return
+     * @param username 用户名
+     * @return 返回用户
      */
     User findUserByUsername(String username);
 
     /**
      * 搜索用户
      *
-     * @param params
-     * @return
+     * @param params 参数
+     * @return 返回符合条件的用户
      */
     List<User> searchUsers(Params params);
 
     /**
      * 更新用户
      *
-     * @param user
+     * @param user 用户
      */
     void updateUserByUsername(User user);
 
     /**
      * 校验用户名是否存在
      *
-     * @param username
-     * @return
+     * @param username 用户名
+     * @return 如果用户名存在返回true，否则返回false
      */
     boolean existsUsername(String username);
 
     /**
      * 保存用户
      *
-     * @param user
+     * @param user 用户
      */
     void saveUserWithDefaultRole(User user);
 
     /**
      * 更新用户密码
      *
-     * @param user
+     * @param user 用户
      */
     void updateUserPassword(User user);
 
     /**
      * 删除用户
      *
-     * @param username
+     * @param username 用户名
      */
     void deleteUserByUsername(String username);
 
     /**
      * 更新用户角色
      *
-     * @param username
-     * @param roles
+     * @param username 用户名
+     * @param roles    角色代码
      */
     void updateUserRoles(String username, String roles);
 }

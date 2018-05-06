@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2018/04/02
+ * @since 5/4/18
  */
 @Repository
 public interface RoleMapper extends MyMapper<Role> {
@@ -17,30 +17,30 @@ public interface RoleMapper extends MyMapper<Role> {
     /**
      * 查找用户角色
      *
-     * @param username
-     * @return
+     * @param username 用户名
+     * @return 返回用户所有角色
      */
     List<Role> selectRolesByUsername(@Param("username") String username);
 
     /**
      * 删除用户所有角色
      *
-     * @param username
+     * @param username 用户名
      */
     void deleteAllRolesByUsername(@Param("username") String username);
 
     /**
      * 删除角色菜单
      *
-     * @param code
+     * @param code 角色代码
      */
     void deleteRoleMenus(@Param("code") String code);
 
     /**
      * 插入角色菜单
      *
-     * @param code
-     * @param menuCodes
+     * @param code      角色代码
+     * @param menuCodes 菜单代码
      */
     void insertRoleMenus(@Param("code") String code, @Param("menuCodes") List<String> menuCodes);
 

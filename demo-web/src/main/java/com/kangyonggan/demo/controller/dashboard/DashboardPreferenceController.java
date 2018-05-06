@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author kangyonggan
- * @date 2018/4/27 0027
+ * @since 5/4/18
  */
 @RestController
 @RequestMapping("dashboard/preference")
@@ -25,10 +25,10 @@ public class DashboardPreferenceController extends BaseController {
     /**
      * 更新偏好
      *
-     * @param type
-     * @param names
-     * @param value
-     * @return
+     * @param type  偏好类型
+     * @param names 偏好名称
+     * @param value 偏好的值
+     * @return 响应
      */
     @RequestMapping(value = "update", method = RequestMethod.GET)
     @RequiresPermissions("DASHBOARD")

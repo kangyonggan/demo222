@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author kangyonggan
- * @date 2018/04/02
+ * @since 5/4/18
  */
 @Repository
 public interface MonitorMapper extends MyMapper<Monitor> {

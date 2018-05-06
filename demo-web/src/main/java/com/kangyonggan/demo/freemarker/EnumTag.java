@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2018/4/23 0023
+ * @since 5/4/18
  */
 @Component
 public class EnumTag extends AbstractFunctionTag {
@@ -18,8 +18,8 @@ public class EnumTag extends AbstractFunctionTag {
     /**
      * 获取枚举的名值对, 根据key
      *
-     * @param arguments
-     * @return
+     * @param arguments 参数
+     * @return 返回枚举的所有名值对
      */
     public LinkedHashMap<Object, Object> map(List arguments) {
         if (!hasLessTwoArgs(arguments)) {

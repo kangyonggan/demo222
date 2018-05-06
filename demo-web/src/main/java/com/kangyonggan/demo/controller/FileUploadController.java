@@ -16,22 +16,25 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author kangyonggan
- * @date 2018/5/1 0001
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("file")
 @Log4j2
 public class FileUploadController {
 
+    /**
+     * 文件跟路径
+     */
     @Value("${file.root.path}")
     private String fileRootPath;
 
     /**
      * 编辑器文件、图片上传
      *
-     * @param file
-     * @param request
-     * @return
+     * @param file    文件
+     * @param request 请求
+     * @return 响应
      */
     @RequestMapping(value = "editor", method = RequestMethod.POST)
     @ResponseBody
@@ -59,8 +62,8 @@ public class FileUploadController {
     /**
      * ajax文件上传
      *
-     * @param file
-     * @return
+     * @param file 文件
+     * @return 响应
      */
     @RequestMapping(value = "upload", method = RequestMethod.POST)
     @ResponseBody

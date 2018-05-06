@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2017/1/8
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("dashboard/monitor/operate")
@@ -29,8 +29,7 @@ public class DashboardMonitorOperateController extends BaseController {
     /**
      * 操作日志
      *
-     * @return
-     * @throws ParseException
+     * @return 返回操作日志界面
      */
     @RequestMapping(method = RequestMethod.GET)
     @RequiresPermissions("MONITOR_OPERATE")
@@ -41,7 +40,7 @@ public class DashboardMonitorOperateController extends BaseController {
     /**
      * 操作日志列表查询
      *
-     * @return
+     * @return 返回查询结果集
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     @RequiresPermissions("MONITOR_OPERATE")

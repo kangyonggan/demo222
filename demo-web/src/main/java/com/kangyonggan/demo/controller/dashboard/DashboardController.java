@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 3/22/18
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("dashboard")
@@ -35,7 +35,7 @@ public class DashboardController extends BaseController {
     /**
      * 工作台模板
      *
-     * @return
+     * @return 返回工作台模板
      */
     @RequestMapping(method = RequestMethod.GET)
     @RequiresPermissions("DASHBOARD")
@@ -52,7 +52,7 @@ public class DashboardController extends BaseController {
     /**
      * 工作台首页
      *
-     * @return
+     * @return 返回工作台首页
      */
     @RequestMapping(value = "index", method = RequestMethod.GET)
     @RequiresPermissions("DASHBOARD")
@@ -63,7 +63,7 @@ public class DashboardController extends BaseController {
     /**
      * 开发手册
      *
-     * @return
+     * @return 返回开发手册界面
      */
     @RequestMapping(value = "help", method = RequestMethod.GET)
     @RequiresPermissions("DASHBOARD")
@@ -74,7 +74,7 @@ public class DashboardController extends BaseController {
     /**
      * 模态框示例
      *
-     * @return
+     * @return 返回模态框
      */
     @RequestMapping(value = "help/create", method = RequestMethod.GET)
     @RequiresPermissions("DASHBOARD")
@@ -83,9 +83,9 @@ public class DashboardController extends BaseController {
     }
 
     /**
-     * 模态框示例
+     * 模态框示例提交
      *
-     * @return
+     * @return 响应
      */
     @RequestMapping(value = "help/save", method = RequestMethod.POST)
     @RequiresPermissions("DASHBOARD")

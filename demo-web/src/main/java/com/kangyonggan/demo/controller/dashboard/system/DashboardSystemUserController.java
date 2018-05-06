@@ -22,7 +22,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2017/1/8
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("dashboard/system/user")
@@ -37,7 +37,7 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 用户管理
      *
-     * @return
+     * @return 返回用户管理界面
      */
     @RequestMapping(method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_USER")
@@ -48,7 +48,7 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 用户列表查询
      *
-     * @return
+     * @return 返回查询结果集
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_USER")
@@ -63,9 +63,9 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 编辑用户
      *
-     * @param username
-     * @param model
-     * @return
+     * @param username 用户名
+     * @param model    数据
+     * @return 返回编辑用户模态框
      */
     @RequestMapping(value = "{username:[\\w]+}/edit", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_USER")
@@ -78,9 +78,9 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 更新用户
      *
-     * @param user
-     * @param result
-     * @return
+     * @param user   用户
+     * @param result 绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "update", method = RequestMethod.POST)
     @ResponseBody
@@ -100,8 +100,8 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 添加用户
      *
-     * @param model
-     * @return
+     * @param model 数据
+     * @return 返回添加用户模态框
      */
     @RequestMapping(value = "create", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_USER")
@@ -114,9 +114,9 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 保存用户
      *
-     * @param user
-     * @param result
-     * @return
+     * @param user   用户
+     * @param result 绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "save", method = RequestMethod.POST)
     @ResponseBody
@@ -136,9 +136,9 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 删除/恢复
      *
-     * @param username
-     * @param isDeleted
-     * @return
+     * @param username  用户名
+     * @param isDeleted 是否删除
+     * @return 响应
      */
     @RequestMapping(value = "{username:[\\w]+}/deleted/{isDeleted:\\b0\\b|\\b1\\b}", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_USER")
@@ -153,8 +153,8 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 物理删除
      *
-     * @param username
-     * @return
+     * @param username 用户名
+     * @return 响应
      */
     @RequestMapping(value = "{username:[\\w]+}/remove", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_ROLE")
@@ -167,9 +167,9 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 修改密码
      *
-     * @param username
-     * @param model
-     * @return
+     * @param username 用户名
+     * @param model    数据
+     * @return 返回修改密码模态框
      */
     @RequestMapping(value = "{username:[\\w]+}/password", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_USER")
@@ -180,11 +180,11 @@ public class DashboardSystemUserController extends BaseController {
     }
 
     /**
-     * 修改密码
+     * 修改密码提交
      *
-     * @param user
-     * @param result
-     * @return
+     * @param user   用户
+     * @param result 绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "password", method = RequestMethod.POST)
     @ResponseBody
@@ -204,9 +204,9 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 设置角色
      *
-     * @param username
-     * @param model
-     * @return
+     * @param username 用户名
+     * @param model    数据
+     * @return 返回设置角色模态框
      */
     @RequestMapping(value = "{username:[\\w]+}/roles", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_USER")
@@ -225,16 +225,16 @@ public class DashboardSystemUserController extends BaseController {
     /**
      * 保存角色
      *
-     * @param username
-     * @param roles
-     * @return
+     * @param username 用户名
+     * @param roles    角色代码
+     * @return 响应
      */
     @RequestMapping(value = "{username:[\\w]+}/roles", method = RequestMethod.POST)
     @RequiresPermissions("SYSTEM_USER")
     @ResponseBody
     @Token(key = "setRoles", type = Token.Type.CHECK)
     public Response updateUserRoles(@PathVariable(value = "username") String username,
-                                               @RequestParam(value = "roles", defaultValue = "") String roles) {
+                                    @RequestParam(value = "roles", defaultValue = "") String roles) {
         User user = userService.findUserByUsername(username);
         userService.updateUserRoles(user.getUsername(), roles);
 

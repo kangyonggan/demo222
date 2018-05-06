@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2017/1/9
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("dashboard/system/preference")
@@ -31,7 +31,7 @@ public class DashboardSystemPreferenceController extends BaseController {
     /**
      * 偏好管理
      *
-     * @return
+     * @return 返回偏好管理界面
      */
     @RequestMapping(method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_PREFERENCE")
@@ -42,7 +42,7 @@ public class DashboardSystemPreferenceController extends BaseController {
     /**
      * 偏好列表查询
      *
-     * @return
+     * @return 返回查询结果集
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_PREFERENCE")
@@ -57,9 +57,9 @@ public class DashboardSystemPreferenceController extends BaseController {
     /**
      * 编辑偏好
      *
-     * @param id
-     * @param model
-     * @return
+     * @param id    偏好ID
+     * @param model 数据
+     * @return 返回编辑偏好模态框
      */
     @RequestMapping(value = "{id:[\\d]+}/edit", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_PREFERENCE")
@@ -72,9 +72,9 @@ public class DashboardSystemPreferenceController extends BaseController {
     /**
      * 更新偏好
      *
-     * @param preference
-     * @param result
-     * @return
+     * @param preference 偏好
+     * @param result     绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "update", method = RequestMethod.POST)
     @ResponseBody
@@ -94,8 +94,8 @@ public class DashboardSystemPreferenceController extends BaseController {
     /**
      * 物理删除
      *
-     * @param id
-     * @return
+     * @param id 偏好ID
+     * @return 响应
      */
     @RequestMapping(value = "{id:[\\d]+}/remove", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_PREFERENCE")
@@ -108,8 +108,8 @@ public class DashboardSystemPreferenceController extends BaseController {
     /**
      * 批量删除
      *
-     * @param ids
-     * @return
+     * @param ids 偏好ID
+     * @return 响应
      */
     @RequestMapping(value = "deleted", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_PREFERENCE")

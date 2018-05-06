@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2018/04/02
+ * @since 5/4/18
  */
 @Table(name = "tb_menu")
 @Data

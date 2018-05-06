@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2017/1/9
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("dashboard/system/dict/content")
@@ -36,8 +36,8 @@ public class DashboardSystemDictContentController extends BaseController {
     /**
      * 字典管理
      *
-     * @param model
-     * @return
+     * @param model 数据
+     * @return 返回字典管理界面
      */
     @RequestMapping(method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_DICT_CONTENT")
@@ -51,7 +51,7 @@ public class DashboardSystemDictContentController extends BaseController {
     /**
      * 字典列表查询
      *
-     * @return
+     * @return 返回查询结果集
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_DICT_CONTENT")
@@ -66,8 +66,8 @@ public class DashboardSystemDictContentController extends BaseController {
     /**
      * 添加字典
      *
-     * @param model
-     * @return
+     * @param model 数据
+     * @return 返回添加字典模态框
      */
     @RequestMapping(value = "create", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_DICT_CONTENT")
@@ -83,9 +83,9 @@ public class DashboardSystemDictContentController extends BaseController {
     /**
      * 保存字典
      *
-     * @param dictionary
-     * @param result
-     * @return
+     * @param dictionary 字典
+     * @param result     绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "save", method = RequestMethod.POST)
     @ResponseBody
@@ -105,9 +105,9 @@ public class DashboardSystemDictContentController extends BaseController {
     /**
      * 编辑字典
      *
-     * @param id
-     * @param model
-     * @return
+     * @param id    字典ID
+     * @param model 数据
+     * @return 返回编辑字典模态框
      */
     @RequestMapping(value = "{id:[\\d]+}/edit", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_DICT_CONTENT")
@@ -123,9 +123,9 @@ public class DashboardSystemDictContentController extends BaseController {
     /**
      * 更新字典
      *
-     * @param dictionary
-     * @param result
-     * @return
+     * @param dictionary 字典
+     * @param result     绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "update", method = RequestMethod.POST)
     @ResponseBody
@@ -145,9 +145,9 @@ public class DashboardSystemDictContentController extends BaseController {
     /**
      * 删除/恢复
      *
-     * @param id
-     * @param isDeleted
-     * @return
+     * @param id        字典ID
+     * @param isDeleted 是否删除
+     * @return 响应
      */
     @RequestMapping(value = "{id:[\\d]+}/deleted/{isDeleted:\\b0\\b|\\b1\\b}", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_DICT_CONTENT")
@@ -162,8 +162,8 @@ public class DashboardSystemDictContentController extends BaseController {
     /**
      * 批量删除
      *
-     * @param ids
-     * @return
+     * @param ids 字典ID
+     * @return 响应
      */
     @RequestMapping(value = "deleted", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_DICT_CONTENT")
@@ -176,8 +176,8 @@ public class DashboardSystemDictContentController extends BaseController {
     /**
      * 物理删除
      *
-     * @param id
-     * @return
+     * @param id 字典ID
+     * @return 响应
      */
     @RequestMapping(value = "{id:[\\d]+}/remove", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_DICT_CONTENT")

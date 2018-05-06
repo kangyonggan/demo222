@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * @author kangyonggan
- * @date 2018/04/02
+ * @since 5/4/18
  */
 @Table(name = "tb_dictionary_type")
 @Data

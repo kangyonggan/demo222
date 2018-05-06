@@ -1,11 +1,11 @@
 package com.kangyonggan.demo.controller.web;
 
+import com.kangyonggan.app.bean.Response;
 import com.kangyonggan.app.constants.AppConstants;
 import com.kangyonggan.app.controller.BaseController;
-import com.kangyonggan.app.bean.Response;
+import com.kangyonggan.app.util.IpUtil;
 import com.kangyonggan.demo.model.User;
 import com.kangyonggan.demo.service.LoginLogService;
-import com.kangyonggan.app.util.IpUtil;
 import lombok.extern.log4j.Log4j2;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.DisabledAccountException;
@@ -25,7 +25,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * @author kangyonggan
- * @date 3/22/18
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("auth")
@@ -38,7 +38,7 @@ public class AuthController extends BaseController {
     /**
      * 登录模板
      *
-     * @return
+     * @return 返回登录模板
      */
     @RequestMapping(method = RequestMethod.GET)
     public String layout() {
@@ -48,7 +48,7 @@ public class AuthController extends BaseController {
     /**
      * 登录界面
      *
-     * @return
+     * @return 返回登录界面
      */
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public String index() {
@@ -58,10 +58,10 @@ public class AuthController extends BaseController {
     /**
      * 登录
      *
-     * @param user
-     * @param captcha
-     * @param request
-     * @return
+     * @param user    用户
+     * @param captcha 验证码
+     * @param request 请求
+     * @return 响应
      */
     @RequestMapping(value = "login", method = RequestMethod.POST)
     @ResponseBody
@@ -109,7 +109,7 @@ public class AuthController extends BaseController {
     /**
      * 注销
      *
-     * @return
+     * @return 重定向到登录界面
      */
     @RequestMapping(value = "logout", method = RequestMethod.GET)
     public String logout() {

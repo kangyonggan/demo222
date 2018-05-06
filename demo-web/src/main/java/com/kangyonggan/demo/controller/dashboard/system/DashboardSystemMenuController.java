@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * @author kangyonggan
- * @date 2017/1/9
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("dashboard/system/menu")
@@ -29,8 +29,8 @@ public class DashboardSystemMenuController extends BaseController {
     /**
      * 菜单管理
      *
-     * @param model
-     * @return
+     * @param model 数据
+     * @return 返回菜单管理界面
      */
     @RequestMapping(method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_MENU")
@@ -44,9 +44,9 @@ public class DashboardSystemMenuController extends BaseController {
     /**
      * 添加菜单
      *
-     * @param pcode
-     * @param model
-     * @return
+     * @param pcode 父菜单代码
+     * @param model 数据
+     * @return 返回添加菜单模态框
      */
     @RequestMapping(value = "create", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_MENU")
@@ -61,9 +61,9 @@ public class DashboardSystemMenuController extends BaseController {
     /**
      * 保存菜单
      *
-     * @param menu
-     * @param result
-     * @return
+     * @param menu   菜单
+     * @param result 绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "save", method = RequestMethod.POST)
     @RequiresPermissions("SYSTEM_MENU")
@@ -82,9 +82,9 @@ public class DashboardSystemMenuController extends BaseController {
     /**
      * 编辑菜单
      *
-     * @param id
-     * @param model
-     * @return
+     * @param id    菜单ID
+     * @param model 数据
+     * @return 返回编辑菜单模态框
      */
     @RequestMapping(value = "{id:[\\d]+}/edit", method = RequestMethod.GET)
     @RequiresPermissions("SYSTEM_MENU")
@@ -100,9 +100,9 @@ public class DashboardSystemMenuController extends BaseController {
     /**
      * 更新菜单
      *
-     * @param menu
-     * @param result
-     * @return
+     * @param menu   菜单
+     * @param result 绑定结果
+     * @return 响应
      */
     @RequestMapping(value = "update", method = RequestMethod.POST)
     @RequiresPermissions("SYSTEM_MENU")
@@ -123,8 +123,8 @@ public class DashboardSystemMenuController extends BaseController {
     /**
      * 删除菜单
      *
-     * @param menu
-     * @return
+     * @param menu 菜单
+     * @return 响应
      */
     @RequestMapping(value = "delete", method = RequestMethod.POST)
     @RequiresPermissions("SYSTEM_MENU")

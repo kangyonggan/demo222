@@ -5,9 +5,9 @@ import lombok.Getter;
 
 /**
  * @author kangyonggan
- * @date 4/23/18
+ * @since 5/4/18
  */
-@Enum(code = "type", name = "name", description = "偏好类型枚举")
+@Enum(code = "type", description = "偏好类型枚举")
 public enum PreferenceType {
 
     /**
@@ -15,9 +15,15 @@ public enum PreferenceType {
      */
     ACE("ace", "Ace Admin的偏好");
 
+    /**
+     * 偏好类型
+     */
     @Getter
     private String type;
 
+    /**
+     * 偏好名称
+     */
     @Getter
     private String name;
 

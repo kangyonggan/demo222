@@ -1,10 +1,15 @@
 package com.kangyonggan.demo.model;
 
-import java.io.Serializable;
-import java.util.Date;
-import javax.persistence.*;
 import lombok.Data;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+/**
+ * @author kangyonggan
+ * @since 5/4/18
+ */
 @Table(name = "tb_user")
 @Data
 public class User implements Serializable {

@@ -13,7 +13,7 @@ import java.util.UUID;
 
 /**
  * @author kangyonggan
- * @date 2018/4/23 0023
+ * @since 5/4/18
  */
 @Component
 public class AppTag extends AbstractFunctionTag {
@@ -24,8 +24,8 @@ public class AppTag extends AbstractFunctionTag {
     /**
      * 获取UUID
      *
-     * @param arguments
-     * @return
+     * @param arguments 参数
+     * @return 返回UUID
      */
     public String uuid(List arguments) {
         if (!hasLessTwoArgs(arguments)) {
@@ -38,7 +38,8 @@ public class AppTag extends AbstractFunctionTag {
     /**
      * 获取偏好
      *
-     * @param arguments
+     * @param arguments 参数
+     * @return 返回偏好
      */
     public String preference(List arguments) {
         String username = ShiroUtils.getShiroUsername();

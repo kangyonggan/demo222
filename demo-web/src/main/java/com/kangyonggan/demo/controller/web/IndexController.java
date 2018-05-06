@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author kangyonggan
- * @date 3/16/18
+ * @since 5/4/18
  */
 @Controller
 @RequestMapping("/")
@@ -16,7 +16,7 @@ public class IndexController extends BaseController {
     /**
      * 首页
      *
-     * @return
+     * @return 返回首页界面
      */
     @RequestMapping(method = RequestMethod.GET)
     public String index() {

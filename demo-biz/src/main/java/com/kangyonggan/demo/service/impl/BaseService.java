@@ -17,8 +17,8 @@ public abstract class BaseService<T> {
     /**
      * 判断记录是否存在
      *
-     * @param entity
-     * @return
+     * @param entity 实体
+     * @return 如果实体存在返回true，否则返回false
      */
     public boolean exists(T entity) {
         return myMapper.selectCount(entity) > 0;
