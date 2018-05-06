@@ -55,10 +55,6 @@
             <groupId>com.kangyonggan</groupId>
             <artifactId>app-freemarker</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.kangyonggan</groupId>
-            <artifactId>app-ace</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>

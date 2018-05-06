@@ -26,8 +26,7 @@
     <bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
 
     <!-- 会话DAO -->
-    <bean id="sessionDAO" class="com.kangyonggan.demo.shiro.MyEnterpriseCacheSessionDAO">
-        <property name="prefix" value="${app.shortname}:"></property>
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
         <property name="activeSessionsCacheName" value="shiro-activeSessionCache"/>
         <property name="sessionIdGenerator" ref="sessionIdGenerator"/>
     </bean>
@@ -72,7 +71,6 @@
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
         <property name="loginUrl" value="/auth#index"/>
-        <!--<property name="unauthorizedUrl" value="/error/403"/>-->
         <property name="filterChainDefinitions">
             <value>
                 /dashboard/** = authc

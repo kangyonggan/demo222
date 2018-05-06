@@ -24,10 +24,6 @@
             <groupId>com.kangyonggan</groupId>
             <artifactId>app-shiro</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.kangyonggan</groupId>
-            <artifactId>app-redis</artifactId>
-        </dependency>
     </dependencies>
 
 </project>
