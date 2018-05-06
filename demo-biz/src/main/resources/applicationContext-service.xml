@@ -10,6 +10,4 @@
     <import resource="applicationContext.xml"/>
     <!--配置线程池-->
     <import resource="applicationContext-pool.xml"/>
-    <!--Redis缓存-->
-    <import resource="classpath*:applicationContext-redis.xml"/>
 </beans>
