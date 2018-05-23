@@ -14,6 +14,10 @@
     </@c.form_actions>
 </@c.form>
 
+<div>
+    ${app('encode', 'name=小新&age=12')}
+</div>
+
 <@c.table url="${baseUrl}/list">
     <@c.th field="id" title="ID" class="hidden-sm hidden-xs"/>
     <@c.th field="username" title="用户名" />
